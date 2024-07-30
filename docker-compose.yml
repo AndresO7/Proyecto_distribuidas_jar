@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    image: api-gateway:latest
+    ports:
+      - "80:80"
+    networks:
+      - microservicios
+
+  msvc-usuarios:
+    image: msvc-usuarios:latest
+    ports:
+      - "8001:8001"
+    networks:
+      - microservicios
+    
+
+  msvc-prestamos:
+    image: msvc-prestamos:latest
+    ports:
+      - "8002:8002"
+    networks:
+      - microservicios
+  
+
+  msvc-pagos:
+    image: msvc-pagos:latest
+    ports:
+      - "8003:8003"
+    networks:
+      - microservicios
+    
+
+  msvc-notificaciones:
+    image: msvc-notificaciones:latest
+    ports:
+      - "8004:8004"
+    networks:
+      - microservicios
+    
+
+  msvc-libros:
+    image: msvc-libros:latest
+    ports:
+      - "8005:8005"
+    networks:
+      - microservicios
+    
+
+  msvc-inventario:
+    image: msvc-inventario:latest
+    ports:
+      - "8006:8006"
+    networks:
+      - microservicios
+    
+
+networks:
+  microservicios:
+    driver: bridge
+
+
